@@ -1,0 +1,130 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+header, footer, .container__main-form__part__button {
+  background-color: antiquewhite;
+}
+
+.container__main-form__part__button:hover {
+  color: antiquewhite;
+}
+
+main, .container, .container__main-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header, footer {
+  position: absolute;
+  width: 100%;
+}
+
+header {
+  top: 0px;
+}
+
+#header-title {
+  text-align: center;
+  padding: 15px;
+}
+
+footer {
+  bottom: 0px;
+}
+
+.author {
+  text-align: center;
+  padding: 5px;
+}
+
+.author__link {
+  color: black;
+  text-decoration: none;
+}
+
+.author__link:hover {
+  text-decoration: underline;
+}
+
+main {
+  height: 100vh;
+}
+
+main {
+  margin: 0 auto;
+}
+
+.container {
+  padding: 60px;
+  width: 500px;
+  border-radius: 40px;
+  background-color: #fffbf6;
+  border: 2px solid #fcf5ed;
+}
+
+.container__instruction {
+  padding: 10px;
+}
+
+.container__instruction-list > li {
+  font-size: 16px;
+}
+
+.container__instruction-list > li__part_of_element {
+  font-weight: 600;
+}
+
+.container__main-form {
+  margin-top: 20px;
+}
+
+.container__main-form__part {
+  margin-bottom: 3px;
+}
+
+.container__main-form__part__button {
+  width: 130px;
+  padding: 3px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.container__main-form__part__button:hover {
+  background-color: black;
+}
+
+.container__main-form__message__text {
+  overflow-wrap: break-word;
+}
+
+#file_to_upload {
+  width: 250px;
+  font-size: 12px;
+}
+
+#main-download-link {
+  color: black;
+  text-decoration: none;
+}
+
+#main-download-link:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=style.css.map */

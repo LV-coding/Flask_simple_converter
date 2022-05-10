@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="It's simple site for convert pdf-file to mp3...">
+    <meta name="author" content="LV-coding">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='hexagon-synchronize-.png') }}">
+    <link rel="stylesheet" href="../static/style.css">
+
+    <title>Convert to MP3</title>
+</head>
+
+<body>
+    <header>
+        <h3 id="header-title">Simple convert to MP3</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <h4 class="container__instruction">Instruction</h5>
+                <ol class="container__instruction-list">
+                    <li>Select a file to convert (.txt, .pdf).</li>
+                    <li>Then select a voice language.</li>
+                    <li>Press "<span class="instruction-list__part_of_element">Convert</span>".</li>
+                    <li>Press "<span class="instruction-list__part_of_element">DOWNLOAD</span>" (WARNING. Files are stored for only 10 minutes).</li>
+                    <li>Say thank to the author :)</li>
+                </ol>
+
+                <form action="{{ url_for('main_page') }}" class="container__main-form" enctype="multipart/form-data"
+                    method="POST">
+                    <div class="container__main-form__part">
+                        <input type="file" name="name_file" id="file_to_upload">
+                    </div>
+                    {{ csrf_token }}
+                    <div class="container__main-form__part">
+                        <select name="lang" class="container__main-form__part__button">
+                            {% for lang in languages %}
+                            <option value="{{lang}}">{{lang}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="container__main-form__part">
+                        <input type="submit" value="Convert" class="container__main-form__part__button">
+                        <input type="reset" value="Сlean the form" class="container__main-form__part__button">
+                    </div>
+                    {% if audio_file_name %}
+                    <div id="main-download" class="container__main-form__part">
+                        <a href="{{ url_for('download', audio_file_name=audio_file_name) }}" target="_blank"
+                            id="main-download-link">DOWNLOAD</a>
+                    </div>
+                    {% else %}
+                    {% endif %}
+                    {% if msg %}
+                    <div class="container__main-form__message">
+                        <p class="container__main-form_message__text">{{ msg }}</p>
+                    </div>
+                    {% else %}
+                    {% endif %}
+                </form>
+        </div>
+    </main>
+    <footer>
+        <p class="author">© <a href="https://github.com/LV-coding" class="author__link">LV-coding</a>, 2022</p>
+    </footer>
+</body>
+
+</html>
